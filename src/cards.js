@@ -31,7 +31,3 @@ const Cardz = (props) => {
 
 export default Cardz;
 
-
-
-
-<Customer/>

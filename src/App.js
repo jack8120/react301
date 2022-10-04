@@ -1,9 +1,24 @@
 import './App.css';
 import Cardz from './cards';
-
+//state
+import { useState } from 'react';
 
 
 const App = () => {
+
+// state
+const [name,setName] = useState('something');
+
+// methods
+const Sample = () => {
+
+  // setter function
+
+  setName(Math.floor(Math.random()*10));
+  console.log("State Change " + name);
+
+}
+
 
 const Customer = [
   {
@@ -37,12 +52,12 @@ const Customer = [
 
       
 
-      <div className="card-container">
+      <div className="card-container" onMouseOver={Sample}>
         
         {/* step 1 - movies.map() */}
-        {Customer.map((value) => {
+        {Customer.map((value,index) => {
           return(
-            <Cardz data = {value} />
+            <Cardz key={index} data = {value} />
 
             // <div className="card">
             //   <h1>Customer Card</h1>
